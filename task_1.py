@@ -1,44 +1,45 @@
 import sys
+from typing import Self
 
 class Node:
 
-def __init__(self,key):
+    def __init__(self,key):
 
-self.left = None
+      self.left = None
+ 
+      self.right = None
 
-self.right = None
+      self.val = key
 
-self.val = key
-
-self.parent = None
+      self.parent = None
 
 class MinHeap:
 
-def __init__(self, maxsize):
+    def __init__(self, maxsize):
 
-self.maxsize = maxsize
+        self.maxsize = maxsize
 
-self.size = 0
+        self.size = 0
 
-self.Heap = Node(-1 * sys.maxsize )
+        self.Heap = Node(-1 * sys.maxsize )
 
-self.FRONT = self.Heap
+        self.FRONT = self.Heap
 
 # A utility function to do inorder tree traversal
 
 def isLeaf(self, node):
 
-if node.left == None and node.right == Node:
+        if node.left == None and node.right == Node:
 
-return True
+            return True
 
-return False
+            return False
 
 # Function to swap two nodes of the heap
 
 def swap(self, node1, node2):
 
-node1.data, node2.data = node2.data, node1.data
+    node1.data, node2.data = node2.data, node1.data
 
 # Function to heapify the node at pos
 
@@ -48,9 +49,9 @@ def minHeapify(self, node):
 
 # than any of its child
 
-if not self.isLeaf(node):
+    if not self.isLeaf(node):
 
-if (node.data > node.left.data or
+        if (node.data > node.left.data or
 
 node.data > node.right.data):
 
@@ -58,31 +59,31 @@ node.data > node.right.data):
 
 # the left child
 
-if node.left.data < node.right.data:
+            if node.left.data < node.right.data:
 
-self.swap(node, node.left)
+             self.swap(node, node.left)
 
-self.minHeapify(node.left)
+             self.minHeapify(node.left)
 
 # Swap with the right child and heapify
 
 # the right child
 
-else:
+    else:
 
-self.swap(node, node.right)
+            self.swap(node, node.right)
 
-self.minHeapify(node.right)
+            self.minHeapify(node.right)
 
 # Function to insert a node into the heap
 
 def insert(self, element):
 
-if self.size >= self.maxsize :
+        if self.size >= self.maxsize :
 
-return
+            return
 
-self.size+= 1
+Self.size+= 1
 
 self.bst_insert(FRONT, element)
 
@@ -90,7 +91,7 @@ current = FRONT
 
 while current.parent != None and current.data < current.parent.data:
 
-self.swap(current, current.parent)
+     self.swap(current, current.parent)
 
 current = current.parent
 
@@ -98,7 +99,7 @@ current = current.parent
 
 def Print(self):
 
-self.inorder()
+    self.inorder()
 
 # Function to build the min heap using
 
@@ -106,9 +107,9 @@ self.inorder()
 
 def inorder(self, root):
 
-if root:
+    if root:
 
-inorder(root.left)
+        inorder(root.left)
 
 print(root.val)
 
@@ -116,13 +117,13 @@ inorder(root.right)
 
 def bst_insert(self, root, node):
 
-if root is None:
+    if root is None:
 
-root = node
+        root = node
 
-else:
+    else:
 
-root.next = node
+        root.next = node
 
 self.FRONT = node
 
@@ -130,7 +131,7 @@ self.FRONT = node
 
 if __name__ == "__main__":
 
-r = Node(50)
+    r = Node(50)
 
 bst_insert(r,Node(30))
 
